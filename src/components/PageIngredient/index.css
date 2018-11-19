@@ -1,0 +1,108 @@
+/***version smartphone***/
+.page{
+    background-image: url(https://i.goopics.net/3AP7Q.jpg
+    );
+    background-size: cover;  
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ingredient-list{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px;
+    padding-top: 10vh;
+    margin:0px;
+    overflow-y: scroll;
+    height: 100%;
+    padding-top:0vh;
+}
+
+.ingredient{
+    margin:10px;
+    padding-right:10px;
+    background-size: cover;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.nameingredient{
+    font-family: Libre Baskerville;
+    font-size: 10px;
+    top:10px;
+    margin-top: 10px;
+}
+
+.image{
+    margin-top:30px;
+    height: 60px;
+    width: 60px;
+}
+
+.imagetexte{
+
+    background-color: rgba(240, 248, 255, 0.616);
+    width: 100px;
+    height: 130px;
+    font-family: Libre baskerville;
+    border-radius: 15px;
+}
+
+h1{
+    font-family: Questrial;
+    font-size: 30px;
+    margin-top: 65px;
+    margin-bottom: 70px;
+    letter-spacing: 10px;
+}
+/***version tablette***/
+
+@media screen and (min-width: 500px){
+    .h1{
+        font-size:38px;
+    }
+
+    .image{
+        width: 100px;
+        height: 100px;
+    }
+    .nameingredient{
+        font-size: 20px;
+    }
+    .ingredient{
+        width:40%;
+    }
+    .imagetexte{
+        width:150px;
+        height: 200px;
+    }
+}
+
+/***version desktop***/
+@media screen and (min-width:950px){
+    .h1{
+        font-size:45px;
+    }
+    .image{
+        width:100px;
+        height:100px;
+    }
+    .nameingredient{
+        font-size: 20px;
+    }
+    .ingredient{
+        width:60%;
+    }
+    .imagetexte{
+        width:150px;
+        height: 200px;
+    }
+}
