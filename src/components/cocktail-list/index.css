@@ -1,0 +1,81 @@
+/****version Mobile****/
+.CocktailTitle{
+    position: absolute;
+    top: 30%;
+    font-size: 30px;
+    text-align: center;
+    float: center;
+    margin: 0;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-family: 'Questrial', sans-serif;
+    letter-spacing: 10px;
+    
+}
+.CocktailBackground{
+    background-image: url(https://i.goopics.net/dkJxd.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60vh; 
+  }
+
+.cocktail-list{
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px;
+    padding-top: 10vh;
+    margin: 0px;
+    height: 100%;
+    overflow-y: scroll;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.cocktail{
+    margin-bottom: 40px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    background-size: cover;
+}
+
+.cocktail img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+
+.cocktailDescription{
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+/****version Tablette****/
+@media screen and (min-width: 500px){
+    .cocktail{
+    width: 30%;
+    }
+    .CocktailTitle{
+    font-size: 38px;
+    }
+}
+
+/****version Desktop****/
+
+@media screen and (min-width: 950px){
+    .cocktail{
+    width: 20%;
+    }
+    .CocktailTitle{
+        font-size: 45px;
+        }
+}
