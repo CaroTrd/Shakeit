@@ -1,0 +1,65 @@
+.DisplayRecette {
+    background-image: url('recettefond.jpg');
+    background-size: cover;
+    height: 150vh; 
+}
+
+
+.container {
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.imgrecette img {
+    display: flex;
+    margin: auto;
+    margin-top: 5em;
+    width: auto;
+    height: 300px;
+}
+
+.flex-container {
+    height: 417.5px;
+    display: flex;
+    overflow: scroll;
+    flex-direction: column;
+    text-align: justify;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+@media screen and (min-width: 800px){
+    .DisplayRecette {
+        height: 100vh; 
+    }
+    .container {
+        display: flex;
+        flex-flow: nowrap;
+        align-content: center;
+    }
+    .imgrecette img {
+        margin-top: 7.5em;
+        margin-left: 100px;
+        width: auto;
+        height: 300px;
+        
+    }
+
+    .flex-container {
+       margin-top: 120px;
+       margin-right: 100px;
+    }
+}
+
+@media screen and (min-width: 1100px){
+    .imgrecette img {
+        width: auto;
+        height: 450px;
+        margin-left: 150px;
+    }
+    .flex-container {
+        margin-right: 150px;
+     }
+
+}
