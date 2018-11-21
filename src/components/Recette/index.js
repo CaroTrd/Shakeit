@@ -14,7 +14,8 @@ class Recette extends Component {
                 instruction: margarita.strInstructions || "",
                 image: margarita.strDrinkThumb || "",
                 ingredients: this.generateArray('strIngredient') || [],
-                measures: this.generateArray('strMeasure') || []
+                measures: this.generateArray('strMeasure') || [],
+                category: margarita.strCategory  || ""
             }
         }
     }
@@ -61,14 +62,19 @@ class Recette extends Component {
                 <div className="container">
                     <div className="imgrecette">
                         <img src={this.state.cocktail.image} alt="picture" />
+                        <button className="Spotify">PLAY MUSIC</button>
                     </div>
                     <div className="flex-container">
-                        <h2>{this.state.cocktail.name}</h2>
-                        <h3>Ingredients</h3>
+                        <div>
+                            <h2 className="titre">{this.state.cocktail.name}</h2>
+                            <p className="Categorie">{this.state.cocktail.category}</p>
+                            <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
+                        </div>
+                        <h3 className="sous-titre">Ingredients</h3>
                         <ul>
                             {ingredietsList}
                         </ul>
-                        <h3>Recette</h3>
+                        <h3 className="sous-titre">Recette</h3>
                         <p>
                             {this.state.cocktail.instruction}
                         </p>
