@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { NavLink } from 'react-router-dom';
 
 import './index.css';
-import logo from "./logo.svg"
 
 
 
@@ -27,10 +26,7 @@ handleClick(){
     return (
     <div className = "homee"> 
 
-    <header>
-        <div>
-             <img src={logo} className="logo" className={this.state.working ? '' : 'logos'} alt="logo" />
-        </div>  
+    <header>  
              <h1 className = "HomeTitle"> WHAT CAN I SUGGEST YOU TONIGHT?</h1>
        
     </header>
