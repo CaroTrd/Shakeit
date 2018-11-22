@@ -1,0 +1,47 @@
+.popup{
+   position:fixed;
+   width: calc(100%-10em);
+   height:calc(100%-8em);
+   padding-top: 8em;
+   background-color:whitesmoke;
+   z-index: 10;
+   top:8em;
+   bottom:8em;
+   left: 10em;
+   right: 10em;
+   text-align:center;
+   border-radius: 5em;
+   font-family: Questrial;
+}
+.popup h3{
+    font-size: 30px;
+}
+.popup button {
+   
+    border:solid;
+    border-color: yellow;
+    border-radius: .5em;
+    color: #fefbef;
+    font-family: 'Arial';
+    font-weight: 1000;
+    width: 10%;
+    height: 10%;
+    margin: 6em;
+    background-color: yellow;
+    font-size: 16px;
+ 
+
+} 
+.popup button:hover{
+    transform: skew(-10deg);
+    
+} 
+
+
+.popup h3{
+    font-family: questrial;
+}
+.close{
+display:none;
+
+}
