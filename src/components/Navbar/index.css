@@ -3,7 +3,7 @@
     animation: App-logo-spin infinite 3s linear;
     height: 30vmin;
     position: absolute;
-    margin-top:-10px;
+    top:-10px;
     left : 50px; 
 }
  
@@ -22,7 +22,7 @@
         animation: App-logo-spin infinite 1s linear;
         height: 25vmin;
         left: 300px;
-        margin-top: -20px; 
+        top: -20px; 
     }
   }
  
@@ -75,11 +75,15 @@ header{
     max-width: 100%;
 }
 
-header nav{
+.menu_bar nav{
+    display: none;
+}
+
+.menu_bar_open nav {
+    width: 300px;
     height:100%;
-    right: -100%;
     position: fixed;
-    background-color: white;
+    background-color: black;
 }
 
 /*le header ouvert se place tout en haut à droite*/
@@ -88,14 +92,12 @@ header .menu_bar_open{
     margin-right: auto;
     position: fixed;
     right: 40px;
-
 }
 /*icon-menu se positionne en haut à droite*/
 .menu_bar_open span {
-    margin-top: 20px;
-    float: right;
+    padding-top: 20px;
     font-size: 30px;
-    color: black;
+    color: white;
     position: fixed;
     z-index: 2;
 }
@@ -109,68 +111,54 @@ header .menu_bar_open nav{
     display:block;
     font-size: 30px;
     float: right;
-    margin-top:65px;
-    margin-right: 100px;
+    padding-top:40px;
+    padding-right: 40px;
 }
 
-header nav ul {
+.menu_bar nav ul {
     list-style: none;
-    padding-right: 0px;
-    padding-left: 50px;
-    margin-top: 50%;
-    margin-left: -50px;
 }
 
-header nav  li  a {
-    padding: 40px;
-    display: block;
-    color: black;
+.menu_bar_open ul {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left:0px;
 }
 
-header nav ul li a{
-    margin-right: 30px;
+.menu_bar_open nav  li  a {
+    color: white;
 }
 
-header nav ul li a:hover {
-    margin-left: 0px;
-    margin-right:0px;
-    background: orange;
-}
-section {
-    padding: 20px;
-}
-
-@media screen and (max-width: 900px){
-    header nav ul li span {
-        margin-right: 20px;
-    }
+.menu_bar_open li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:40px;
     
+}
+
+.menu_bar_open nav ul li a:hover {
+    background: orange;
 }
 
 @media screen and (max-width: 500px){
-
-    header nav {
-        height: 100%;
-        margin-left: -100%;
-        margin-left: 0px;
-    }
-    header .menu_bar_open{
+    .menu_bar_open{
         left: 0px;
-    
     }
-    header .menu_bar_open nav{
+    .menu_bar_open nav{
         left: 0;
         margin-right: 20px;
     } 
    
     .menu_bar {
-        padding: 10px; 
         float: left;
-        margin-top: 0px;
     }
     .menu_bar_open span {
-        margin-top: 20px;
-        margin-left: 10px;
+        padding-top: 10px;
+        padding-left: 20px;
     }
 }
 
