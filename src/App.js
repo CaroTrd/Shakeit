@@ -4,7 +4,6 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 //import Home from './components/Home/index';
 //import CocktailList from './components/CocktailList/index';
-import BarreDeRecherche from './components/BarreDeRecherche/index';
 import Ingredients from './components/PageIngredient/index';
 //import Navigation from './components/Navbar/Navigation';
 //import DisplayRecette from './components/Recette/DisplayRecette';
@@ -16,7 +15,6 @@ class App extends Component {
     return (
       <div className="App">
         {/*<Navigation />*/ }
-        <BarreDeRecherche/>
           <Switch>
           <Route exact path="/ingredients" component={Ingredients} />
               {/*<Route exact path="/" component={Home} />

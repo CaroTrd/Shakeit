@@ -1,114 +1,89 @@
 /***version smartphone***/
 .page{
-    background-image: url(https://i.goopics.net/3AP7Q.jpg
-    );
+    background-image: url(https://i.goopics.net/XgnJp.jpg);
     background-size: cover;  
-    position: ;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
+    overflow-y: scroll;
 }
 
 .ingredient-list{
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0px;
-    padding-top: 10vh;
-    margin:0px;
-    overflow-y: scroll;
+    margin:0;
     height: 100%;
-    padding-top:0vh;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: center;
 }
  
 .ingredient{
-    margin:10px 0;
-    padding-right:10px;
-    background-size: cover;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
-    box-sizing: border-box;
+    width: 100%;margin-bottom: 20px;
 }
 
-.nameingredient{
-    font-family: Libre Baskerville;
-    font-size: 20px;
-    top:5px;
-    margin-top: 10px;
-}
-
-.image{
-    margin-top:16px;
-    height: 120px;
-    width: 120px;
-}
-
-.imagetexte{
-
-    background-color: rgba(240, 248, 255, 0.616);
-    width: 150px;
+.ingredient-container{
+    width: 100%;
+    background-color: #FFF;
     height: 200px;
-    font-family: Libre baskerville;
-    border-radius: 15px;
+    display:flex;
+    align-items: center;
+    box-shadow: 2px 2px 10px black;
 }
 
-h1{
-    font-family: Questrial;
-    font-size: 30px;
-    margin-top: 65px;
-    margin-bottom: 70px;
-    letter-spacing: 10px;
+.image-container{
+    width: 40%;
 }
+
+.ingredient-container .image{
+    display: block;
+    max-width: 100%;
+}
+
+.ingredient-content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    width: 60%;
+}
+
+.ingredient-name{
+    font-family: Libre Baskerville;
+    font-size: 25px;
+    margin:10px 0;
+}
+
+
+
 /***version tablette***/
 
 @media screen and (min-width: 500px){
-    .h1{
-        font-size:38px;
-    }
-
-    .image{
-        width: 100px;
-        height: 100px;
-    }
-    .nameingredient{
-        font-size: 20px;
-        top: 5px;
-        margin-bottom: 15px;
-    }
     .ingredient{
-        width:33.3%;
+        width:50%;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
-    .imagetexte{
-        width:150px;
-        height: 200px;
-    }
+    
+
 }
 
-/***version desktop***/
-@media screen and (min-width:950px){
-    .h1{
-        font-size:45px;
-    }
-    .image{
-        width:100px;
-        height:100px;
-    }
-    .nameingredient{
-        font-size: 20px;
-        top: 5px;
-        margin-top:15px;
 
+/***version desktop***/
+@media screen and (min-width:960px){
+    .ingredient-list{
+        max-width: 1100px;
+        margin: 0 auto;
     }
+
     .ingredient{
-        width:20%;
-    }
-    .imagetexte{
-        width:150px;
-        height: 200px;
+        width:33.3%;
     }
 }
