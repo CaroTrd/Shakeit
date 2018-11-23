@@ -4,7 +4,62 @@
     height: 150vh; 
 }
 
+/*Spotify */
+.play {
 
+}
+
+button.Spotify {
+    position: absolute;
+    right: 20px;
+    display: flex;
+    align-items: flex-start;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: rgba(114, 119, 113, 0.39);
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div img.spotify-logo{
+    height: 40px;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+p.description{
+    margin-top:15px;
+    height: 0px;
+}
+
+/*Popup*/
+.recette_close .bottom-info{
+    display:none;
+}
+.recette_open .bottom-info{
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 25%;
+    background: white;
+    height: 50vh;
+    margin: 10% 5% 10% 5%;
+    padding: 10% 5% 10% 5%;
+  }
+
+  /*.recette_open .front {
+      background: white;
+      width: auto;
+      height: auto;
+      padding: 3% 10% 3% 10%;
+  }*/
+
+/**/
 .container {
     display: flex;
     align-items: stretch;
@@ -20,24 +75,14 @@
     height: 300px;
 }
 
-.Spotify {
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-    border-radius: 10px;
-    background-color: rgba(8, 8, 8, 0.38);
-    color: white;
-    font-weight: bold;
-}
 
 .flex-container {
-    height: 417.5px;
+    height: auto;
     display: flex;
     overflow: scroll;
     flex-direction: column;
-    text-align: justify;
     padding: 1em;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .Alcoholic {
@@ -52,33 +97,63 @@
     float: left;
 }
 
-.Categorie {
-    border-style: solid;
-    background-color: green; 
-    border-color: green;
-    border-width: 2px;
-    border-radius: 5px;
-    color: white;
-    font-weight: bold;
-    margin: auto;
-    margin-top: -20px;
-    float: left;
-}
-
-.sous-titre {
-    font-weight: bold;
+div.description{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 h2.titre {
     font-size: 2.3em;
     font-variant: all-small-caps;
     font-weight: bold;
+    margin-top: 0px;
+    font-weight: bold;
 }
 
-ul .ingredient{
-    margin-top: -8px;
-    font-size: 1em;
+.Categorie {
+    border-style: solid;
+    border-color: #674109;
+    border-width: 2px;
+    border-radius: 5px;
+    color: #674109;
+    font-weight: bold;
+    margin: auto;
+    margin-top: -20px;
+    float: left;
 }
+
+p.information {
+    text-align: justify; 
+}
+
+
+ul .ingredient{
+    margin-top: -5px;
+    font-size: 0.8em;
+}
+
+.bottom-info h3.sous-titre {
+    margin-top: 50px;
+}
+
+@media screen and (min-width: 610px){
+    .recette_open .bottom-info{
+        width: auto;
+      }
+    
+      /*.front {
+          background: white;
+          width: auto;
+          height: auto;
+          padding: 3% 10% 3% 10%;
+      }*/
+
+      .bottom-info h3.sous-titre {
+        margin-top: 50px;
+    }
+
+}
+
 @media screen and (min-width: 835px){
     .DisplayRecette {
         height: 100vh; 
@@ -88,6 +163,13 @@ ul .ingredient{
         flex-flow: nowrap;
         align-content: center;
     }
+
+    .open .container {
+        display: flex;
+        flex-flow: nowrap;
+        align-content: center;
+    }
+
     .imgrecette img {
         margin-top: 7.5em;
         margin-left: 100px;
@@ -96,11 +178,29 @@ ul .ingredient{
         
     }
 
+
     .flex-container {
-       margin-top: 120px;
-       margin-right: 100px;
+        height: 417.5px;
+        width: 480px;
+        margin-top: 120px; 
+        margin-right: 100px;
     }
-    
+    h2.titre {
+        margin-top: 20px;
+    }
+
+    /*Popup close*/
+    .recette_close .bottom-info{
+        display: none;
+      }
+
+    /*Popup open*/
+    .recette_open .bottom-info{
+
+      }
+
+      
+
 }
 
 @media screen and (min-width: 1150px){
