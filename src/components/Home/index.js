@@ -10,13 +10,13 @@ class Home extends Component {
         super(props);
         this.state = {
             isClicked : false,
-            working: false
         }
+
     }
 
 
 
-handleClick(){
+handleClick = () => {
     this.setState({
        isClicked : !this.state.isClicked 
     })
@@ -24,25 +24,15 @@ handleClick(){
 
   render() {
     return (
-    <div className = "homee"> 
+    <div className = "general-background"> 
 
     <header>  
-             <h1 className = "HomeTitle"> WHAT CAN I SUGGEST YOU TONIGHT?</h1>
+             <h1 className = "Home-title"> WHAT CAN I SUGGEST YOU TONIGHT?</h1>
        
     </header>
-
-
-    <section className = "homeBouton">
-
-        <div className={this.state.isClicked ? 'Open_page' : 'page'}>
-        <NavLink to="/ingredients" />
-        <button className = "BoutonIng" isClicked ={this.state.isClicked} onClick={this.handleClick}>Pick an ingredient</button>
-        </div>
-
-        <div className={this.state.isClicked ? 'Open_page' : 'page'}>
-        <NavLink to="/Cocktails" />
-        <button className = "BoutonCock" isClicked ={this.state.isClicked} onClick={this.handleClick}>Pick a cocktail</button>
-        </div>
+    <section className = "home-boutons">
+        <NavLink to="/ingredients"  className="home-button">find an ingredient</NavLink>
+        <NavLink to="/Cocktails" className="home-button" >find a cocktail</NavLink>
     </section>
     </div>
     );
