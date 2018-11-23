@@ -15,9 +15,16 @@ class CocktailList extends Component {
         this.state = {
             working: false,
             cocktailName: [],
-            show: false,
+            visible: 3,
         }
+        this.loadMore = this.loadMore.bind(this);
     }
+
+    loadMore() {
+        this.setState((prev) => {
+          return {visible: prev.visible + 6};
+        });
+      }
 
     getCocktailList(list) {
 
@@ -26,11 +33,7 @@ class CocktailList extends Component {
         )
     }
 
-    handleLoad(){
-        this.setState({
-            show:!this.state.show
-        })
-    }
+    
   
     render() {
         const cocktail = cocktailList.map((elem, index) => (
@@ -46,14 +49,14 @@ class CocktailList extends Component {
         <Fragment>
             <div className="page">
                 <h1 className = "CocktailTitle">SEARCH FOR YOUR COCKTAIL HERE</h1> 
-                <div className = {this.state.show ? 'load_more' : 'load_stop'}></div>
-                <div>
                     <ul className="cocktail-list"> 
                         {cocktail}
-                        <button className = "laod" onClick = {() => this.handleLoad()}> LOAD MORE ?</button>
                     </ul>
-                </div>
             </div>
+            {this.state.visible < this.state.cocktailList.length &&
+             <button onClick={this.loadMore} type="button" className="load-more">Load more</button>
+            }
+
         </Fragment>
         
     );
