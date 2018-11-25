@@ -5,13 +5,11 @@
 }
 
 /*Spotify */
-.play {
-
-}
 
 button.Spotify {
     position: absolute;
     right: 20px;
+    top: 20px;
     display: flex;
     align-items: flex-start;
     border-style: solid;
@@ -27,12 +25,12 @@ button.Spotify {
 
 div img.spotify-logo{
     height: 40px;
-    margin-top: 0px;
-    margin-left: 5px;
+    padding-top: 0px;
+    padding-left: 0px;
 }
 
 p.description{
-    margin-top:15px;
+    padding-top:5px;
     height: 0px;
 }
 
@@ -42,13 +40,13 @@ p.description{
 }
 .recette_open .bottom-info{
     position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 0%;
+    left: 10%;
+    right: 10%;
+    top: 10%;
     bottom: 25%;
     background: white;
+    width: auto;
     height: 50vh;
-    margin: 10% 5% 10% 5%;
     padding: 10% 5% 10% 5%;
   }
 
@@ -60,6 +58,15 @@ p.description{
   }*/
 
 /**/
+
+/*Backboutton*/
+
+.boutonretour {
+    display: flex;
+    
+}
+
+
 .container {
     display: flex;
     align-items: stretch;
@@ -70,7 +77,6 @@ p.description{
 .imgrecette img {
     display: flex;
     margin: auto;
-    margin-top: 5em;
     width: auto;
     height: 300px;
 }
@@ -93,13 +99,14 @@ p.description{
     color: #8c0f00;
     font-weight: bold;
     margin: auto;
-    margin-top: -20px;
     float: left;
 }
 
 div.description{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: inline;
+    
 }
 
 h2.titre {
@@ -118,7 +125,6 @@ h2.titre {
     color: #674109;
     font-weight: bold;
     margin: auto;
-    margin-top: -20px;
     float: left;
 }
 
@@ -128,12 +134,11 @@ p.information {
 
 
 ul .ingredient{
-    margin-top: -5px;
     font-size: 0.8em;
 }
 
 .bottom-info h3.sous-titre {
-    margin-top: 50px;
+    padding-top: 30px;
 }
 
 @media screen and (min-width: 610px){
@@ -148,20 +153,20 @@ ul .ingredient{
           padding: 3% 10% 3% 10%;
       }*/
 
-      .bottom-info h3.sous-titre {
-        margin-top: 50px;
-    }
-
 }
 
 @media screen and (min-width: 835px){
     .DisplayRecette {
         height: 100vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
-    .container {
+    div.container {
         display: flex;
         flex-flow: nowrap;
-        align-content: center;
+        justify-content: center;
+        align-items: center;
     }
 
     .open .container {
@@ -171,8 +176,6 @@ ul .ingredient{
     }
 
     .imgrecette img {
-        margin-top: 7.5em;
-        margin-left: 100px;
         width: auto;
         height: 300px;
         
@@ -180,14 +183,11 @@ ul .ingredient{
 
 
     .flex-container {
-        height: 417.5px;
-        width: 480px;
-        margin-top: 120px; 
-        margin-right: 100px;
+        height: 413px;
+        width: 400px;
+        padding-top: 20px;
     }
-    h2.titre {
-        margin-top: 20px;
-    }
+    
 
     /*Popup close*/
     .recette_close .bottom-info{
@@ -196,8 +196,12 @@ ul .ingredient{
 
     /*Popup open*/
     .recette_open .bottom-info{
-
-      }
+        position: absolute;
+        left: 10%;
+        right: 10%;
+        top: 5%;
+        bottom: 25%;
+    }
 
       
 
@@ -207,10 +211,8 @@ ul .ingredient{
     .imgrecette img {
         width: auto;
         height: 450px;
-        margin-left: 150px;
     }
     .flex-container {
-        margin-right: 150px;
         padding-left: 50px;
         padding-right: 50px;
      }

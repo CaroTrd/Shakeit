@@ -73,7 +73,7 @@ class Recette extends Component {
         return (
             <div className="DisplayRecette">
                 <div>
-                <Retourbutton />
+                    <Retourbutton />
                 </div>
                 <div className="play">
                     <button className="Spotify">
@@ -99,30 +99,30 @@ class Recette extends Component {
                                 {ingredietsList}
                             </ul>
                         </div>
-
-
-                        <div className={this.state.showPopup ? 'recette_open' : 'recette_close'} onClick={() => this.togglePopup()}>
-                            <button>Let's go</button>
-                            <div className="bottom-info">
-                                    <h2 className="titre">{this.state.cocktail.name}</h2>
-                                    <div className="description">
-                                        <p className="Categorie">{this.state.cocktail.category}</p>
-                                        <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
-                                    <h3 className="sous-titre">Ingredients</h3>
-                                    <ul>
-                                        {ingredietsList}
-                                    </ul>
-
-                                    <h3 className="sous-titre">Recette</h3>
-                                    <p className="information">
-                                        {this.state.cocktail.instruction}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
+
+                <div className={this.state.showPopup ? 'recette_open' : 'recette_close'} onClick={() => this.togglePopup()}>
+                    <button>Let's go</button>
+                    <div className="bottom-info">
+                        <h2 className="titre">{this.state.cocktail.name}</h2>
+                        <div className="descrip">
+                            <p className="Categorie">{this.state.cocktail.category}</p>
+                            <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
+                            <h3 className="sous-titre">Ingredients</h3>
+                            <ul>
+                                {ingredietsList}
+                            </ul>
+
+                            <h3 className="sous-titre">Recette</h3>
+                            <p className="information">
+                                {this.state.cocktail.instruction}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         );
     }
