@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import { NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom';
 
 class Navigation extends Component {
     constructor(props) {
@@ -25,7 +25,7 @@ class Navigation extends Component {
                     <nav>
                         <ul>
                             <li><NavLink to="/" activeClassName="selected" className="icon-home">HOME</NavLink></li>
-                            <li><NavLink to="/CocktailList" className="icon-glass2">COCKTAILS</NavLink></li>
+                            <li><NavLink to="/CocktailList" className="icon-drink">COCKTAILS</NavLink></li>
                         </ul>
                     </nav>
                 </div>

@@ -28,13 +28,13 @@
  
  /*Style icon*/
 
-@font-face {
+ @font-face {
     font-family: 'icomoon';
-    src:  url('fonts/icomoon.eot?rnhbam');
-    src:  url('fonts/icomoon.eot?rnhbam#iefix') format('embedded-opentype'),
-      url('fonts/icomoon.ttf?rnhbam') format('truetype'),
-      url('fonts/icomoon.woff?rnhbam') format('woff'),
-      url('fonts/icomoon.svg?rnhbam#icomoon') format('svg');
+    src:  url('fonts/icomoon.eot?npd9ee');
+    src:  url('fonts/icomoon.eot?npd9ee#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?npd9ee') format('truetype'),
+      url('fonts/icomoon.woff?npd9ee') format('woff'),
+      url('fonts/icomoon.svg?npd9ee#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
   }
@@ -54,17 +54,17 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
-  .icon-home:before {
+  .icon-drink:before {
     content: "\e900";
   }
-  .icon-cart:before {
-    content: "\e93a";
-  }
-  .icon-glass2:before {
-    content: "\e9a1";
+  .icon-home:before {
+    content: "\e901";
   }
   .icon-menu:before {
-    content: "\e9bd";
+    content: "\e903";
+  }
+  .icon-shop:before {
+    content: "\e902";
   }
   
 
@@ -150,7 +150,6 @@ header .menu_bar_open nav{
     }
     .menu_bar_open nav{
         left: 0;
-        margin-right: 20px;
     } 
    
     .menu_bar {
@@ -158,7 +157,7 @@ header .menu_bar_open nav{
     }
     .menu_bar_open span {
         padding-top: 10px;
-        padding-left: 20px;
+        padding-left: 10px;
     }
 }
 
