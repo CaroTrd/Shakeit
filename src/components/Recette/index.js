@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Retourbutton from './retourbutton';
-
+import ConnectSpotify from './ConnectSpotify';
 
 import './index.css';
 
@@ -22,7 +22,6 @@ class Recette extends Component {
                 category: margarita.strCategory || ""
             },
             showPopup: false
-            /*popup*/
         }
     }
 
@@ -60,7 +59,7 @@ class Recette extends Component {
             showPopup: !this.state.showPopup
         });
     }
-
+    /**/
     render() {
         const ingredietsList = this.state.cocktail.ingredients.map((elem, i) => (
             <li className="ingredient" key={i}>
@@ -75,14 +74,7 @@ class Recette extends Component {
                 <div>
                     <Retourbutton />
                 </div>
-                <div className="play">
-                    <button className="Spotify">
-                        <p className="description">Listen to music here</p>
-                        <img src="https://static.thenounproject.com/png/115005-200.png" alt="spotify" className="spotify-logo" />
-                    </button>
-                </div>
-
-
+                <ConnectSpotify  />
                 <div className="container">
                     <div className="imgrecette">
                         <img src={this.state.cocktail.image} alt="picture" />
@@ -99,30 +91,28 @@ class Recette extends Component {
                                 {ingredietsList}
                             </ul>
                         </div>
-                    </div>
-                </div>
+                        {/*Popup*/}
+                        <div className={this.state.showPopup ? 'recette_open' : 'recette_close'} onClick={() => this.togglePopup()}>
+                            <button className="letsgo">Let's shakeit</button>
+                            <div className="bottom-info">
+                                <h2 className="titre">{this.state.cocktail.name}</h2>
+                                <div className="descrip">
+                                    <p className="Categorie">{this.state.cocktail.category}</p>
+                                    <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
+                                    <h3 className="sous-titre">Ingredients</h3>
+                                    <ul>
+                                        {ingredietsList}
+                                    </ul>
 
-                <div className={this.state.showPopup ? 'recette_open' : 'recette_close'} onClick={() => this.togglePopup()}>
-                    <button>Let's go</button>
-                    <div className="bottom-info">
-                        <h2 className="titre">{this.state.cocktail.name}</h2>
-                        <div className="descrip">
-                            <p className="Categorie">{this.state.cocktail.category}</p>
-                            <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
-                            <h3 className="sous-titre">Ingredients</h3>
-                            <ul>
-                                {ingredietsList}
-                            </ul>
-
-                            <h3 className="sous-titre">Recette</h3>
-                            <p className="information">
-                                {this.state.cocktail.instruction}
-                            </p>
+                                    <h3 className="sous-titre">Recette</h3>
+                                    <p className="information">
+                                        {this.state.cocktail.instruction}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-
             </div>
         );
     }
