@@ -1,17 +1,6 @@
 /****version Mobile****/
 
 
-.page{
-    background-image: url(https://i.goopics.net/XgnJp.jpg );
-    background-attachment: fixed;
-    background-size: cover;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll; 
-  }
-
 .CocktailTitle{
     margin: 10% 20% 10% 20%;
     font-size: 30px;
@@ -29,7 +18,7 @@
 
 
 .cocktail-list{
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
