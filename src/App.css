@@ -7,6 +7,17 @@
   height: 40vmin;
 }
 
+.page{
+  background-image: url(https://i.goopics.net/XgnJp.jpg);
+  background-size: cover;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
 .page-title{
   font-family: Questrial;
   font-size: 30px;

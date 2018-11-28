@@ -1,14 +1,5 @@
 /***version smartphone***/
-.page{
-    background-image: url(https://i.goopics.net/XgnJp.jpg);
-    background-size: cover;  
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-}
+
 
 .ingredient-list{
     list-style: none;
@@ -26,7 +17,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
 .ingredient-container{

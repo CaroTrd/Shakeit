@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import BarreDeRecherche from '../BarreDeRecherche/index';
-
 import './index.css';
-
-//import searchBarre
 
 
 class PageIngredient extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ingredientList: []
+            ingredientList: [],
+            visible: 6,
         }
     }
+    loadMore(){
+        this.setState((prev)=>{
+        return {visible: prev.visible +6};
+        });
+    }
+    
 
     getIngredientsList(list) {
         this.setState(
@@ -21,7 +25,7 @@ class PageIngredient extends Component {
     }
 
     render() {
-        const ingredients = this.state.ingredientList.map((elem, index) => (
+        const ingredients = this.state.ingredientList.slice(0, this.state.visible).map((elem, index) => (
             <li className="ingredient" key={index}>
                 <div className="ingredient-container">
                     <p className="image-container">
@@ -36,18 +40,19 @@ class PageIngredient extends Component {
             </li>
         ))
         return (
-            <div className="wraper">
+            <React.Fragment>
                 <div className="page">
                     <h1 className="page-title">SEARCH YOUR INGREDIENT HERE</h1>
                     <BarreDeRecherche callback={(list) => this.getIngredientsList(list)} type="ingredient" />
                     <ul className="ingredient-list">
                         {ingredients}
                     </ul>
-                </div>
-            </div>
-        )
+                    
+        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
 
-        //<SearchBarre callback={()=> this.getIngredientsList} /> -->
+                </div>
+            </React.Fragment>
+        )
     }
 }
-export default PageIngredient
+export default PageIngredient;
