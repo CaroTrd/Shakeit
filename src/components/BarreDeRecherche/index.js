@@ -60,7 +60,6 @@ class BarreDeRcherche extends Component {
         />
         </div>
 
-        <ul>{displayIngredient}</ul>
       </div>
     );
   }
