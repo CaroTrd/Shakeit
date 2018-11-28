@@ -74,7 +74,7 @@ class Recette extends Component {
                 <div>
                     <Retourbutton />
                 </div>
-                <ConnectSpotify  />
+                    <ConnectSpotify  />
                 <div className="container">
                     <div className="imgrecette">
                         <img src={this.state.cocktail.image} alt="picture" />
