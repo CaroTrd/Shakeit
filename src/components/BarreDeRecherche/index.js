@@ -5,20 +5,11 @@ class BarreDeRcherche extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: "",
-    
-      
-   
-      
-      
+     dataList: [],
      
     };
   }
-  getItemList(e){
-    this.setState({
-      item: e.target.value
-    })
-  }
+  
 
  
     
@@ -31,21 +22,24 @@ class BarreDeRcherche extends Component {
         this.setState({
          dataList : data.drinks
         })
-        //this.props.callback(this.state.dataList);
+      
       })
+  }
+    componenetDidUpdate(prevProps, prevState){
+      if(prevState.dataList !== this.state.dataList ){
+           this.props.callback(this.state.dataList);
+      
     }
+  }
       
     
 
  
 
   render() {
-    
-    
     return (
       
-        <div className="search-container" >
-        <div>
+    <div className="search-container" >
         <input
           type="text"
           className="search-bar"
@@ -58,8 +52,7 @@ class BarreDeRcherche extends Component {
           src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
           alt=""
         />
-        </div>
-        </div>
+  </div>
 
     
     );
