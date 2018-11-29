@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './index.css';
+
 class ConnectSpotify extends Component {
     constructor(props) {
         super(props);
@@ -41,7 +43,7 @@ class ConnectSpotify extends Component {
         console.log(this.state.url)
         return (
             <div className="play">
-                <iframe src={`https://open.spotify.com/embed/playlist/${this.state.url}`} width="300" height="380" frameBorder="0" allowtransparency="true">
+                <iframe src={`https://open.spotify.com/embed/playlist/${this.state.url}`} width="300" height="75" frameBorder="0" allowtransparency="true">
                 </iframe>
             </div >
         );
