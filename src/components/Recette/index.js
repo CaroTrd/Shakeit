@@ -9,7 +9,7 @@ class Recette extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cocktailData: {},
+            cocktailData: [],
             cocktail:
             {
                 name: margarita.strDrink || "",
@@ -25,8 +25,8 @@ class Recette extends Component {
         }
     }
 
-    /*
-        componentDidMount() {
+    componentDidMount() {
+        getDetails = (newCocktail) => {
             const newCocktail = {};
             this.cocktail.name = margarita.strDrink;
             this.cocktail.isAlcoholic = margarita.strAlcoholic;
@@ -35,13 +35,13 @@ class Recette extends Component {
             this.cocktail.image = margarita.strDrinkThumb;
             this.cocktail.ingredients = this.generateArray('strIngredient');
             this.cocktail.measures = this.generateArray('strMeasure');
-    
+
             this.setState({
-                cocktail: newCocktail
+                cocktailData: newCocktail
             })
         }
-    
-    */
+    }
+
     generateArray(str) {
         let array = []
         for (let i = 1; i <= 15; i++) {
@@ -61,7 +61,7 @@ class Recette extends Component {
     }
     /**/
     render() {
-        const ingredietsList = this.state.cocktail.ingredients.map((elem, i) => (
+        const ingredietsList = this.state.cocktailData.ingredients.map((elem, i) => (
             <li className="ingredient" key={i}>
                 <dl>
                     <dt>{elem}</dt>
@@ -74,8 +74,8 @@ class Recette extends Component {
                 <div>
                     <Retourbutton />
                 </div>
-                    <ConnectSpotify  />
-                <div className="container">
+                <ConnectSpotify />
+                <div className="container" callback={(newCocktail) => this.getDetails(newCocktail)}>
                     <div className="imgrecette">
                         <img src={this.state.cocktail.image} alt="picture" />
                     </div>
