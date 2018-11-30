@@ -6,12 +6,17 @@
 
 /*Spotify */
 
-div.play {
+button.Spotify {
     position: fixed;
     right: 20px;
     top: 10px;
     display: flex;
     align-items: flex-start;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: hsla(66, 49%, 62%, 0.388);
     color: white;
     font-weight: bold;
     padding-top: 10px;
@@ -25,10 +30,13 @@ div img.spotify-logo{
     padding-left: 0px;
 }
 
-p.description{
+a.description{
     padding-top:5px;
     height: 0px;
+    color: white;
+    text-decoration: none;
 }
+
 
 /*Page smartphone*/
 
@@ -182,7 +190,7 @@ img.retour {
           padding: 3% 10% 3% 10%;
       }*/
 
-      button.Spotify {
+    button.Spotify {
         top: 25px;
     }
 

@@ -6,7 +6,7 @@ class ConnectSpotify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cocktailName: 'Mertens',
+            cocktailName: 'Mojito',
             images: "",
             url: "",
 
@@ -20,7 +20,7 @@ class ConnectSpotify extends Component {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + 'BQDUkk9FI4oX05IoFkAmqKLKs6fO_unscvV99Ve39TPUWj_gEQhyswGt7gaywNQM0tOZrQv5BfdSnpaDAq4MMWgCwK8t0yN9VjD7-9Ls_cv6GkUwqxS3lyw-vXAUiw7Hnp5Ez9tRG5PBfO9yx-5pB1Lm8emSD7MugS8rSVN8041GWq-LAKHLLkGhwNvY4Kh61OKG2zO9V3jZ29wszZUx2klKuY8'
+                "Authorization": 'Bearer ' + 'BQBLs-AXkkjPHgkcEmbIeFmSW5tXTQ-qHQ_GkOLYyzrb2rUaG1HYr1gkF6zKMhw4SN4vzrbVQKiH1dA25m3ghwwcqvIpWYA6f073AVcmb-1s8PLet3PYwjXdYahNHNymMm1FyGDTanYxtcd5g-3N2Dzl6r9tB6htzfJQj_kK2DYdvaubbxoUiGPOHVowUK-sckCB7OqNe5GORlKdRnRqm1UCt44'
             }
         }
         fetch(source, config)
@@ -29,11 +29,11 @@ class ConnectSpotify extends Component {
                 console.log(data)
                 if (!data.playlists.items.length > 0) {
                     this.setState({
-                        url: '37i9dQZF1DWWzhxZzVxMP3'
+                        url: 'https://open.spotify.com/playlist/37i9dQZF1DWWzhxZzVxMP3'
                     })
                 } else {
                     this.setState({
-                        url: data.playlists.items[0].id
+                        url: data.playlists.items[0].external_urls.spotify
                     })
                 }
             })
@@ -43,8 +43,12 @@ class ConnectSpotify extends Component {
         console.log(this.state.url)
         return (
             <div className="play">
-                <iframe src={`https://open.spotify.com/embed/playlist/${this.state.url}`} width="300" height="75" frameBorder="0" allowtransparency="true">
-                </iframe>
+                <a href={this.state.url} target="_blank">
+                    <button className="Spotify">
+                        <p className="description"> Listen to music here</p>
+                        <img src="https://static.thenounproject.com/png/115005-200.png" alt="spotify" className="spotify-logo" />
+                    </button>
+                </a>
             </div >
         );
     }
