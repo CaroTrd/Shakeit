@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navbar/Navigation';
-import CocktailList from './components/cocktailList/index';
+import CocktailList  from './components/cocktailList/index';
 import Ingredients from './components/PageIngredient/index';
 
 class App extends Component {
