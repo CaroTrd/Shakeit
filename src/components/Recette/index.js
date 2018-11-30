@@ -25,8 +25,7 @@ class Recette extends Component {
         }
     }
 
-    componentDidMount() {
-        getDetails = (newCocktail) => {
+    /*componentDidMount() {
             const newCocktail = {};
             this.cocktail.name = margarita.strDrink;
             this.cocktail.isAlcoholic = margarita.strAlcoholic;
@@ -39,8 +38,7 @@ class Recette extends Component {
             this.setState({
                 cocktailData: newCocktail
             })
-        }
-    }
+    }*/
 
     generateArray(str) {
         let array = []
@@ -61,7 +59,7 @@ class Recette extends Component {
     }
     /**/
     render() {
-        const ingredietsList = this.state.cocktailData.ingredients.map((elem, i) => (
+        const ingredietsList = this.state.cocktail.ingredients.map((elem, i) => (
             <li className="ingredient" key={i}>
                 <dl>
                     <dt>{elem}</dt>
@@ -75,40 +73,29 @@ class Recette extends Component {
                     <Retourbutton />
                 </div>
                 <ConnectSpotify />
-                <div className="container" callback={(newCocktail) => this.getDetails(newCocktail)}>
-                    <div className="imgrecette">
-                        <img src={this.state.cocktail.image} alt="picture" />
+                <div className={"container " + (this.state.showPopup ? '' : 'closed')}>
+                    <div className="imgrecette" style={{backgroundImage: 'url(' + this.state.cocktail.image+')' }}>
                     </div>
                     <div className="flex-container">
-                        <h2 className="titre">{this.state.cocktail.name}</h2>
-                        <div className="description">
-                            <p className="Categorie">{this.state.cocktail.category}</p>
-                            <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
-                        </div>
-                        <div>
-                            <h3 className="sous-titre">Ingredients</h3>
-                            <ul>
-                                {ingredietsList}
-                            </ul>
-                        </div>
-                        {/*Popup*/}
-                        <div className={this.state.showPopup ? 'recette_open' : 'recette_close'} onClick={() => this.togglePopup()}>
-                            <button className="letsgo">Let's shakeit</button>
-                            <div className="bottom-info">
-                                <h2 className="titre">{this.state.cocktail.name}</h2>
-                                <div className="descrip">
-                                    <p className="Categorie">{this.state.cocktail.category}</p>
-                                    <p className="Alcoholic">{this.state.cocktail.isAlcoholic}</p>
-                                    <h3 className="sous-titre">Ingredients</h3>
-                                    <ul>
-                                        {ingredietsList}
-                                    </ul>
+                        <div className="content">
+                            <h2 className="titre">{this.state.cocktail.name}</h2>
+                            <div className="description">
+                                <p className="tag categorie">{this.state.cocktail.category}</p>
+                                <p className="tag alcoholic">{this.state.cocktail.isAlcoholic}</p>
+                            </div>
+                            <div>
+                                <h3 className="sous-titre">Ingredients</h3>
+                                <ul>
+                                    {ingredietsList}
+                                </ul>
+                                <h3 className="sous-titre">Recette</h3>
+                                <p className="information">
+                                    {this.state.cocktail.instruction}
+                                </p>
+                            </div>
+                            <div className="button-container">
+                                <button className="cta" onClick={() => this.togglePopup()}> {this.state.showPopup  ? 'Close' : 'See more'} </button>
 
-                                    <h3 className="sous-titre">Recette</h3>
-                                    <p className="information">
-                                        {this.state.cocktail.instruction}
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>

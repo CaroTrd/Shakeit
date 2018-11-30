@@ -2,6 +2,32 @@
     background-image: url('recettefond.jpg');
     -webkit-background-size: cover;
     background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Backboutton*/
+.boutonretour {
+    position: fixed;
+    top: 2.5%;
+    left: 3%;
+    z-index: 1;
+}
+
+button.fleche {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: rgba(114, 119, 113, 0.39);
+    padding-top: 4px;
+}
+
+img.retour {
+    width: 5vh;
 }
 
 /*Spotify */
@@ -38,47 +64,37 @@ p.description{
 /*Page smartphone*/
 
 .container {
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     align-items: stretch;
     flex-direction: column;
-    padding: 1em;
 }
 
-.imgrecette img {
+.flex-container{
     display: flex;
-    margin: auto;
-    margin-top: 100px;
-    width: auto;
-    height: 300px;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
 }
 
+.imgrecette{
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+}
 
 .flex-container {
-    height: auto;
-    display: flex;
     overflow: scroll;
-    flex-direction: column;
     padding: 1em;
+    box-sizing: border-box;
     background-color: rgba(255, 255, 255, 1);
 }
 
-.Alcoholic {
-    border-style: solid;
-    border-color: #8c0f00;
-    border-width: 2px;
-    border-radius: 5px;
-    color: #8c0f00;
-    font-weight: bold;
-    margin: auto;
-    float: left;
-}
 
-div.description{
-    padding-top: 15px;
-    padding-bottom: 15px;
-    display: inline;
-    
-}
+
 
 h2.titre {
     font-size: 2.3em;
@@ -89,170 +105,122 @@ h2.titre {
     font-weight: bold;
 }
 
-.Categorie {
-    border-style: solid;
-    border-color: #674109;
-    border-width: 2px;
+.description{
+    display: flex; 
+ }
+ 
+
+.tag{
+    border: solid 2px #000;
     border-radius: 5px;
-    color: #674109;
     font-weight: bold;
-    margin: auto;
-    float: left;
+    padding:.2em .5em;
+    margin-right: .5em;
+}
+
+.alcoholic {
+    color: #8c0f00;
+    border-color: #8c0f00;
+}
+
+.categorie {
+    color: #674109;
+    border-color: #674109;
 }
 
 p.information {
     text-align: justify; 
 }
 
-
-ul .ingredient{
+.ingredient{
     font-size: 0.8em;
+}
+.ingredient dl{
+    display: flex;
+}
+
+.ingredient dt{
+    font-weight: 900;
+}
+
+.ingredient dd{
+    margin-left:10px;
 }
 
 .bottom-info h3.sous-titre {
     padding-top: 30px;
 }
 
-
-/*Popup*/
-.recette_close .bottom-info{
-    display:none;
-}
-.recette_open .bottom-info{
-    position: fixed;
-    top: 0%;
-    left: 0px;
-    bottom: 25%;
-    background: white;
-    width: auto;
-    height: 50vh;
-  }
-
-  /*.recette_open .front {
-      background: white;
-      width: auto;
-      height: auto;
-      padding: 3% 10% 3% 10%;
-  }*/
-
-/**/
-
-/*Backboutton*/
-.boutonretour {
-    position: fixed;
-    top: 2.5%;
-    left: 3%;
-    z-index: 1;
+.button-container{
+    display: none;
 }
 
-button.fleche {
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-    border-radius: 20px;
-    background-color: rgba(114, 119, 113, 0.39);
-    padding-top: 4px;
-}
+@media screen and (min-width: 580px){
 
-img.retour {
-    width: 5vh;
-}
-/*Popup ouvert*/
-
-.recette_open .bottom-info{
-    position: fixed;
-    top: 13%;
-    bottom: 0px;
-    padding-top: 30px;
-    width: auto;
-    height: auto;
-    overflow: scroll;
-    padding: 5% 5% 10% 5%;
-    border-style: solid;
-    border-color: white;
-    border-width: 2px;
-    border-radius: 40px;
-}
-/**/
-
-@media screen and (min-width: 610px){
-    .recette_open .bottom-info{
-        width: auto;
-      }
-    
-      /*.front {
-          background: white;
-          width: auto;
-          height: auto;
-          padding: 3% 10% 3% 10%;
-      }*/
-
-      button.Spotify {
-        top: 25px;
+    .container {
+        flex-direction: row;
+        transition: all 280ms ease-in-out;
+       
     }
 
-    .boutonretour {
-        top: 4%;
+    .container.closed{
+        min-width: auto;
+        min-height: auto;
+        max-width: 80%;
+        max-height: 400px;
+        margin: auto;
     }
 
-}
+    .closed .imgrecette{
+        padding: 0;
 
-@media screen and (min-width: 835px){
-    .DisplayRecette {
-        height: 100vh; 
+    }
+
+    .imgrecette, .flex-container{
+        width: 50%;
+    }
+
+    .imgrecette{
+        padding-bottom: 50%;
+    }
+
+    .flex-container{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .flex-container .content{
+        height: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
-        align-items: center;
-    }
-    div.container {
-        display: flex;
-        flex-flow: nowrap;
-        justify-content: center;
-        align-items: center;
-    }
-    div.imgrecette {
-        height: 450px;
-    }
-    .imgrecette img {
-         
-        margin-top: 0px;
-        width: auto;
-        height: 300px;
-        
-    }
-
-
-    .flex-container {
-        height: 413px;
-        width: 400px;
-        padding-top: 20px;
-    }
     
-
-    /*Popup close*/
-    .recette_close .bottom-info{
-        display: none;
-      }
-
-    /*Popup open*/
-    .recette_open .bottom-info{
-        height: 55%;
-        left: 10%;
-        right: 10%;
-    }
-}
-
-@media screen and (min-width: 1150px){
-    .imgrecette img {
-        width: auto;
-        height: 450px;
-    }
-    .flex-container {
-        padding-left: 50px;
-        padding-right: 50px;
-     }
-     .recette_open .bottom-info{
-        height: 50%;
     }
 
+    .closed .flex-container .content{
+        display: block;
+    }
+
+
+.button-container{
+    display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        padding: .5em;
+        box-sizing: border-box;
+        text-align: center;
+    }
+.button-container:before{
+        content:'';
+        position: absolute;
+        top: -35px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        overflow: visible;
+        background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+    }
 }
