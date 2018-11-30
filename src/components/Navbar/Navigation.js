@@ -19,7 +19,7 @@ class Navigation extends Component {
     render() {
         return (
             <header>
-                <div className={this.state.isOpen ? 'menu_bar_open' : 'menu_bar'} onClick={() => this.handleClick()}>
+                <div className={'menu_bar ' + (this.state.isOpen ? 'menu_bar_open' : '')} onClick={() => this.handleClick()}>
 
                     <span className="icon-menu"></span>
                     <nav>
