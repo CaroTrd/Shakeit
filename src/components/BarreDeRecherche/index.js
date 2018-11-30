@@ -6,8 +6,10 @@ class BarreDeRcherche extends Component {
     super(props);
     this.state = {
      dataList: [],
+     item:"",
      
-    };
+    }
+    this.getDataList = this.getDataList.bind(this);
   }
   
 
@@ -15,24 +17,41 @@ class BarreDeRcherche extends Component {
     
     componentDidMount(){
       const url='https://www.thecocktaildb.com/api/json/v1/1/';
-      let param = this.props.type === "ingredient" ? "list.php?=i=list" :"filter.php?c=Cocktail";
+      let param = this.props.type === "ingredient" ? "list.php?i=list" :"filter.php?c=Cocktail";
     fetch (url + param)
     .then(response => response.json())
       .then(data => {
         this.setState({
          dataList : data.drinks
         })
+        console.log(this.state.dataList)
       
       })
   }
-    componenetDidUpdate(prevProps, prevState){
-      if(prevState.dataList !== this.state.dataList ){
-           this.props.callback(this.state.dataList);
+    componentDidUpdate(prevProps, prevState){
+      console.log(this.state.item)
+      
+      if(prevState.item !== this.state.item ){
+        console.log(this.state.dataList, 'hello')
+        const filteredList = this.state.dataList.filter( (elem)=>{
+          if(elem.strDrink.includes(this.state.item)){
+          return elem
+        }  
+      })
+        console.log(filteredList,"coucou")
+
+           //this.props.callback(filteredList);
+           
+        
       
     }
   }
       
-    
+   getDataList(ev){
+     this.setState({
+        item : ev.target.value
+     })
+   } 
 
  
 
@@ -44,7 +63,7 @@ class BarreDeRcherche extends Component {
           type="text"
           className="search-bar"
           value={this.state.item}
-          onChange={ev => this.getItemList(ev)}
+          onChange={ev => this.getDataList(ev)}
           placeholder="What can I serve you ?"
         />
         <img
