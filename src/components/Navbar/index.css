@@ -1,0 +1,120 @@
+ /*Style icon*/
+
+ @font-face {
+    font-family: 'icomoon';
+    src:  url('fonts/icomoon.eot?npd9ee');
+    src:  url('fonts/icomoon.eot?npd9ee#iefix') format('embedded-opentype'),
+      url('fonts/icomoon.ttf?npd9ee') format('truetype'),
+      url('fonts/icomoon.woff?npd9ee') format('woff'),
+      url('fonts/icomoon.svg?npd9ee#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-drink:before {
+    content: "\e900";
+  }
+  .icon-home:before {
+    content: "\e901";
+  }
+  .icon-menu:before {
+    content: "\e903";
+  }
+  .icon-shop:before {
+    content: "\e902";
+  }
+  
+
+/*Style Navigation*/
+.menu_bar{
+    display:block;
+    font-size: 30px;
+    position: fixed;
+    right: 100%;
+}
+.menu_bar span {
+    font-size: 30px;
+    color: black;
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    z-index: 2;
+}
+
+.menu_bar_open span {
+    color:white;
+}
+.menu_bar nav{
+    opacity: 0;
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:5%;
+    background-color: black;
+    transform: scale(.95);
+    transition: all 280ms ease-in-out;
+   pointer-events: none;
+}
+
+.menu_bar_open nav {
+   opacity: 1;
+   transform: scale(1);
+   pointer-events: auto;
+   top:0;
+
+
+}
+
+.menu_bar ul {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-left:0px;
+    list-style: none;
+}
+
+.menu_bar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:40px;
+    
+}
+
+.menu_bar  a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.menu_bar nav ul li a:hover {
+    background: orange;
+}
+
+@media screen and (min-width: 500px){
+    .menu_bar{
+        right: 300px;
+    }
+    .menu_bar nav{
+        width: 300px;
+    }
+
+}
