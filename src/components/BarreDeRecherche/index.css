@@ -5,7 +5,7 @@
     border-radius: 40px;
     padding : 10px;
     box-sizing: border-box;
-    background-color: rgba(192,192,192,0.3);
+    background-color: white;
     margin: 10px;
    } 
     .search-bar{
@@ -37,4 +37,4 @@
       .search-container{
         margin: 10px auto;
       }
-    }
+}
