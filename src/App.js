@@ -20,7 +20,7 @@ class App extends Component {
                 <Route exact path="/ingredients" component={Ingredients} />
               {/*<Route path="/recette" component={Recette} /> */}
           </Switch>
-          <BarreDeRecherche/>
+         
       </div>
     );
   }
