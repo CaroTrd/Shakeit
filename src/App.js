@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import Recette from './components/Recette/index';
 import { withCookies, Cookies } from 'react-cookie';
 
 import './App.css';
-
-
+import { Switch, Route } from 'react-router-dom';
+import Navigation from './components/Navbar/Navigation';
+/*import Home from './components/Home/index';*/
+import CocktailList from './components/cocktailList/index';
+import Ingredients from './components/PageIngredient/index';
+/*import BarreDeRecherche from './components/BarreDeRecherche/index';*/
+import Recette from './components/Recette/index';
 
 class App extends Component {
   constructor(props){
@@ -36,7 +40,14 @@ class App extends Component {
     return (
       
       <div className="App">
-        <Recette />
+      <Navigation />
+          <Switch>
+            {/*<Route exact path="/" component={Home} />*/}
+              <Route exact path="/cocktaillist" component={CocktailList}/>
+                <Route  path="/ingredients" component={Ingredients} />
+              <Route path="/cocktaillist/recette/:strId" component={Recette}/>
+          </Switch>
+         
       </div>
     );
   }
