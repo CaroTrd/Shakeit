@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import './App.css';
-<<<<<<< HEAD
 /*import Home from './components/Home/index';*/
 import CocktailList from './components/cocktailList/index';
 import Ingredients from './components/PageIngredient/index';
@@ -18,12 +17,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         {/*<Navigation />*/}
           <Switch>
             {/*<Route exact path="/" component={Home} />*/}
-              <Route path="/cocktaillist" component={CocktailList}/>
-                <Route exact path="/ingredients" component={Ingredients} />
+                <Route exact path="/cocktaillist/" component={CocktailList}/>
+                <Route path="/cocktaillist/:strIngredient1" component={CocktailList}/>
+                <Route path="/ingredients" component={Ingredients} />
               {/*<Route exact path="/" component={Home} />
               <Route path="/recette" component={DisplayRecette} /> */}
           </Switch>

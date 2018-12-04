@@ -35,13 +35,13 @@ class BarreDeRcherche extends Component {
  
 
   render() {
-    let displayIngredient = this.state.ingredientList.filter(elem=> 
+    /*let displayIngredient = this.state.ingredientList.filter(elem=> 
     elem.strIngredient1.toLowerCase().includes(this.state.ingredient.toLowerCase()))
     .map((elem, i)=> {
         return (
             <li key={i}>{elem.strIngredient1}</li>
         )
-    })
+    })*/
     
     return (
       <div>
