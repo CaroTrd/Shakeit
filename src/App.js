@@ -20,6 +20,7 @@ class App extends Component {
                 <Route  path="/ingredients" component={Ingredients} />
               <Route path="/cocktaillist/recette/:strId" component={Recette}/>
           </Switch>
+         
       </div>
     );
   }
