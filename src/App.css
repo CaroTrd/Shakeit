@@ -33,7 +33,9 @@
   background-color: #ffbd4a;
   color: white;
   border:none;
-  padding: 8px 16px;
+  cursor: pointer;
+  padding: 12px 16px;
+  outline: none;
 }
 
 
