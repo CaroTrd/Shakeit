@@ -17,7 +17,7 @@ class Recette extends Component {
     }
 
     componentDidMount(props) {
-        const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.strId || 13060}`;
+        const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.idDrink}`;
         fetch(url)
             .then(response => response.json())
             .then(data => {
