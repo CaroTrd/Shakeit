@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import BarreDeRecherche from '../BarreDeRecherche/index'
+import {withRouter} from "react-router";
 import { NavLink } from 'react-router-dom';
 
 import './index.css';
@@ -23,12 +24,29 @@ class CocktailList extends Component {
         });
     }
 
+
     getCocktailName(cocktail) {
 
         this.setState(
             { cocktailName: cocktail }
         )
     }
+    
+    
+    componentDidMount() {
+        const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.props.match.params.strIngredient1}`;
+       if(this.props.match.params.strIngredient1){
+        fetch(url)
+            .then(response => response.json())
+            .then(data =>{
+                this.setState({
+                    cocktailName: data.drinks
+                })
+            })
+        }
+    }
+    
+
 
 
 
@@ -50,8 +68,9 @@ class CocktailList extends Component {
             <Fragment>
                 <div className="page">
                     <h1 className="page-title">SEARCH FOR YOUR COCKTAIL HERE</h1>
-                    <BarreDeRecherche callback={(cocktail) => this.getCocktailName(cocktail)} type="cocktail" />
-                    <ul className="cocktail-list">
+                    {!this.props.match.params.strIngredient1 &&
+                        <BarreDeRecherche callback={(cocktail) => this.getCocktailName(cocktail)} type="cocktail" />
+                    }<ul className="cocktail-list">
                         {cocktail}
                     </ul>
                     {this.state.visible < this.state.cocktailName.length &&
@@ -67,4 +86,4 @@ class CocktailList extends Component {
     }
 }
 
-export default CocktailList;
+export default withRouter(CocktailList);

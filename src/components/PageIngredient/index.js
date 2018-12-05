@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import BarreDeRecherche from '../BarreDeRecherche/index';
 import './index.css';
+import {NavLink} from 'react-router-dom';
 
 
 class PageIngredient extends Component {
@@ -34,7 +35,9 @@ class PageIngredient extends Component {
                     </p>
                     <div className="ingredient-content">
                         <p className="ingredient-name">{elem.strIngredient1}</p>
+                        <NavLink to={`/cocktailList/${elem.strIngredient1}`}>
                         <button className="cta">Cocktails</button>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -48,8 +51,10 @@ class PageIngredient extends Component {
                     <ul className="ingredient-list">
                         {ingredients} 
                     </ul>
-                    {this.state.visible < this.state.ingredientList.length &&
-                        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+                    
+                    {this.state.visible < this.state.cocktailName.length &&           
+                    <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+
                     }
                 </div>
             </React.Fragment>
