@@ -17,9 +17,9 @@ class CocktailList extends Component {
 
     }
 
-    loadMore(){
-        this.setState((prev)=>{
-        return {visible: prev.visible +6};
+    loadMore() {
+        this.setState((prev) => {
+            return { visible: prev.visible + 6 };
         });
     }
 
@@ -55,7 +55,7 @@ class CocktailList extends Component {
                         {cocktail}
                     </ul>
                     {this.state.visible < this.state.cocktailName.length &&
-                        <button onClick={() => this.laodMore()} type="button" className="cta">Load more</button>
+                        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
                     }
                 </div>
 

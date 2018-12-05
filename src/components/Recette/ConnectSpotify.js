@@ -22,13 +22,14 @@ class ConnectSpotify extends Component {
     }
 
     fetchSong(){
-        const source = 'https://api.spotify.com/v1/search?' + 'q=' + this.props.name + '&type=playlist&limit=1';
+
+        const source = 'https://api.spotify.com/v1/search?'+'q='+ this.props.name + '&type=playlist&limit=1';
         const config = {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + 'BQAkAmTKiyP-kr2dp55AxwfHUiL4ONmz7REjq_j-GeC0LcmAmQqnXfQn2E98xsJyb5dkoLWeynS9AIWODBl03XKPxbd_WhJzshhPRZcbAvb6f8vHBPgBmB8oAS1Tb6UBojLCWN6MGAV6mq8KL4d7A4MQocd1NLY5wutzr5jb5IqGDgROWNqSE4G2XLk1YOO2hZgsO_vCgnr2rCeaIUstWRo6tTo'
+                "Authorization": 'Bearer ' + 'BQCbjopFI45_xMBq7puPZZ-yQN0WlgkUBTmNV9m-Jo3mRisheKBl9GUfIhzLdRbZBGtJG8H_fzTe8thiaWDR_llu7hK_h8vxjQxq4ec5k-CiLmZCVQPueSt69ulU5hDc1hr1lXI_lCsrHlsnVfHP5ql4QP1mzh4DqugsfxjPzd3XT7wEzhuMR0COgo31zR-90q6Jw4geMRvNJ970KHsNNkQyKn8'
             }
         }
         fetch(source, config)
