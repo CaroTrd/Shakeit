@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import Recette from './components/Recette/index';
 import { Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navbar/Navigation';
 /*import Home from './components/Home/index';*/
-import Cocktail from './components/cocktailList/index';
-import Ingredients from './components/PageIngredient/index';
 /*import BarreDeRecherche from './components/BarreDeRecherche/index';*/
+import CocktailList from './components/cocktailList/index';
+import Ingredients from './components/PageIngredient/index';
 import Recette from './components/Recette/index';
 
 class App extends Component {
@@ -16,7 +15,7 @@ class App extends Component {
       <Navigation />
           <Switch>
             {/*<Route exact path="/" component={Home} />*/}
-              <Route exact path="/cocktaillist" component={CocktailList}/>
+              <Route exact path="/cocktailList" component={CocktailList}/>
                 <Route  path="/ingredients" component={Ingredients} />
               <Route path="/cocktaillist/recette/:strId" component={Recette}/>
           </Switch>
