@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Recette from './components/Recette/index';
+
 import { Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navbar/Navigation';
 import Home from './components/Home/index';
