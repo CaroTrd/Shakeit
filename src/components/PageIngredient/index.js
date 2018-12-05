@@ -51,13 +51,10 @@ class PageIngredient extends Component {
                     <ul className="ingredient-list">
                         {ingredients} 
                     </ul>
-<<<<<<< HEAD
+                    
                     {this.state.visible < this.state.cocktailName.length &&           
                     <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
-=======
-                    {this.state.visible < this.state.ingredientList.length &&
-                        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
->>>>>>> 728c50fb4d3c9a17a6ea0795b8a33142b62c646a
+
                     }
                 </div>
             </React.Fragment>
