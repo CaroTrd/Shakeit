@@ -60,9 +60,11 @@ div img.spotify-logo{
     padding-left: 0px;
 }
 
-p.description{
+a.description{
     padding-top:5px;
     height: 0px;
+    color: white;
+    text-decoration: none;
 }
 
 /*Page smartphone*/
