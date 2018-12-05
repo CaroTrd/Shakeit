@@ -38,7 +38,7 @@ class CocktailList extends Component {
     
     componentDidMount() {
         const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${this.props.match.params.strIngredient1}`;
-        {this.props.match.params.strIngredient1 &&
+       if(this.props.match.params.strIngredient1){
         fetch(url)
             .then(response => response.json())
             .then(data =>{
