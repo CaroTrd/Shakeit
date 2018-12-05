@@ -46,6 +46,7 @@
     font-size: 30px;
     position: fixed;
     right: 100%;
+    z-index: 2;
 }
 .menu_bar span {
     font-size: 30px;
