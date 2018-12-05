@@ -23,7 +23,9 @@ class BarreDeRcherche extends Component {
       .then(data => {
         this.setState({
          dataList : data.drinks
-        })      
+
+        })
+        console.log(data.drinks)      
       })
   }
     componentDidUpdate(prevProps, prevState){

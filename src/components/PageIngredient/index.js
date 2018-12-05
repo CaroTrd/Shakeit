@@ -11,14 +11,15 @@ class PageIngredient extends Component {
             visible: 6,
         }
     }
-    loadMore(){
-        this.setState((prev)=>{
-        return {visible: prev.visible +6};
+    loadMore() {
+        this.setState((prev) => {
+            return { visible: prev.visible + 6 };
         });
     }
-    
+
 
     getIngredientsList(list) {
+        console.log(list);
         this.setState(
             { ingredientList: list }
         )
@@ -45,11 +46,11 @@ class PageIngredient extends Component {
                     <h1 className="page-title">SEARCH YOUR INGREDIENT HERE</h1>
                     <BarreDeRecherche callback={(list) => this.getIngredientsList(list)} type="ingredient" />
                     <ul className="ingredient-list">
-                        {ingredients}
+                        {ingredients} 
                     </ul>
-                    
-        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
-
+                    {this.state.visible < this.state.ingredientList.length &&
+                        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+                    }
                 </div>
             </React.Fragment>
         )

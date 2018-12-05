@@ -32,7 +32,7 @@ handleClick = () => {
     </header>
     <section className = "home-boutons">
         <NavLink to="/ingredients"  className="home-button cta">find an ingredient</NavLink>
-        <NavLink to="/cocktailList" className="home-button cta" >find a cocktail</NavLink>
+        <NavLink to="/CocktailList" className="home-button cta" >find a cocktail</NavLink>
     </section>
     </div>
     );
