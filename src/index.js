@@ -3,12 +3,10 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
-import Popup from'./components/Popup'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
     <div>
-    <Popup/>
     <BrowserRouter>
        
         <App />

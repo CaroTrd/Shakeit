@@ -6,6 +6,7 @@ import Navigation from './components/Navbar/Navigation';
 /*import Home from './components/Home/index';*/
 import CocktailList from './components/cocktailList/index';
 import Ingredients from './components/PageIngredient/index';
+import Popup from'./components/Popup'
 /*import BarreDeRecherche from './components/BarreDeRecherche/index';
 import Recette from './components/Recette/index';*/
 
@@ -16,6 +17,7 @@ class App extends Component {
        return (
      
       <div className="App">
+      <Popup/>
       <Navigation />
           <Switch>
             {/*<Route exact path="/" component={Home} />*/}
