@@ -27,12 +27,12 @@ handleClick = () => {
     <div className = "general-background"> 
 
     <header>  
-             <h1 className = "Home-title"> WHAT CAN I SUGGEST YOU TONIGHT?</h1>
+             <h1 className = "home-title"> WHAT CAN I SUGGEST YOU TONIGHT?</h1>
        
     </header>
     <section className = "home-boutons">
-        <NavLink to="/ingredients"  className="home-button">find an ingredient</NavLink>
-        <NavLink to="/Cocktails" className="home-button" >find a cocktail</NavLink>
+        <NavLink to="/ingredients"  className="home-button cta">find an ingredient</NavLink>
+        <NavLink to="/Cocktails" className="home-button cta" >find a cocktail</NavLink>
     </section>
     </div>
     );
