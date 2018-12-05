@@ -46,7 +46,7 @@ class PageIngredient extends Component {
                     <h1 className="page-title">SEARCH YOUR INGREDIENT HERE</h1>
                     <BarreDeRecherche callback={(list) => this.getIngredientsList(list)} type="ingredient" />
                     <ul className="ingredient-list">
-                        {ingredients}
+                        {ingredients} 
                     </ul>
                     {this.state.visible < this.state.ingredientList.length &&
                         <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>

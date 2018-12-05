@@ -5,7 +5,6 @@ class ConnectSpotify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            cocktailName: 'Mojito',
             images: "",
             url: "",
 
@@ -13,19 +12,28 @@ class ConnectSpotify extends Component {
     }
 
     componentDidMount() {
-        const source = 'https://api.spotify.com/v1/search?' + 'q=' + this.state.cocktailName + '&type=playlist&limit=1';
+        this.fetchSong()
+    }
+
+    componentDidUpdate(prevProps){
+        if(prevProps.name !== this.props.name ){
+            this.fetchSong()
+        }
+    }
+
+    fetchSong(){
+        const source = 'https://api.spotify.com/v1/search?' + 'q=' + this.props.name + '&type=playlist&limit=1';
         const config = {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + 'BQBLs-AXkkjPHgkcEmbIeFmSW5tXTQ-qHQ_GkOLYyzrb2rUaG1HYr1gkF6zKMhw4SN4vzrbVQKiH1dA25m3ghwwcqvIpWYA6f073AVcmb-1s8PLet3PYwjXdYahNHNymMm1FyGDTanYxtcd5g-3N2Dzl6r9tB6htzfJQj_kK2DYdvaubbxoUiGPOHVowUK-sckCB7OqNe5GORlKdRnRqm1UCt44'
+                "Authorization": 'Bearer ' + 'BQAkAmTKiyP-kr2dp55AxwfHUiL4ONmz7REjq_j-GeC0LcmAmQqnXfQn2E98xsJyb5dkoLWeynS9AIWODBl03XKPxbd_WhJzshhPRZcbAvb6f8vHBPgBmB8oAS1Tb6UBojLCWN6MGAV6mq8KL4d7A4MQocd1NLY5wutzr5jb5IqGDgROWNqSE4G2XLk1YOO2hZgsO_vCgnr2rCeaIUstWRo6tTo'
             }
         }
         fetch(source, config)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 if (!data.playlists.items.length > 0) {
                     this.setState({
                         url: 'https://open.spotify.com/playlist/37i9dQZF1DWWzhxZzVxMP3'
@@ -39,7 +47,6 @@ class ConnectSpotify extends Component {
     }
 
     render() {
-        console.log(this.state.url)
         return (
             <div className="play">
                 <a href={this.state.url} target="_blank">

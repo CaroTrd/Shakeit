@@ -72,7 +72,7 @@ class Recette extends Component {
                 <div>
                     <Retourbutton />
                 </div>
-                <ConnectSpotify />
+                <ConnectSpotify  name={this.state.cocktailData.name}/>
                 <div className={"container " + (this.state.showPopup ? '' : 'closed')}>
                     <div className="imgrecette" style={{ backgroundImage: 'url(' + this.state.cocktailData.image + ')' }}>
                     </div>
