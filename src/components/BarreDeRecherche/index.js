@@ -49,6 +49,7 @@ class BarreDeRcherche extends Component {
  
 
   render() {
+
     return (
       
     <div className="search-container" >

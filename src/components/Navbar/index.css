@@ -46,7 +46,7 @@
     font-size: 30px;
     position: fixed;
     right: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 .menu_bar span {
     font-size: 30px;
@@ -54,7 +54,7 @@
     position: fixed;
     top: 40px;
     right: 40px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .menu_bar_open span {

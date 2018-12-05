@@ -1,20 +1,13 @@
 /****version Mobile****/
 
 
-.CocktailTitle{
-    margin: 10% 20% 10% 20%;
-    font-size: 30px;
-    text-align: center;
-    letter-spacing: 10px;
-    
-}
+
 
 .container-cocktail{
     background-color: white;
     padding-bottom:15px; 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 
 .cocktail-list{
     list-style: none;
