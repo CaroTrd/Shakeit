@@ -22,8 +22,10 @@ import'./index.css'
        return(
             <div className={this.state.isOpen ? 'popup' : ' close'}>
                 <h3>Are you over 18 ?</h3>
-                <button class="cta" onClick={this.handleClickyes}> yes</button>
-                <button  class="cta" onClick={this.handleClickno}>no</button>
+                <div className="button-groupe">
+                <button className="cta" onClick={this.handleClickyes}> yes</button>
+                <button  className="cta" onClick={this.handleClickno}>no</button>
+                </div>
             </div>
             )
         }
