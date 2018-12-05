@@ -5,8 +5,9 @@ import Navigation from './components/Navbar/Navigation';
 import Home from './components/Home/index';
 import CocktailList from './components/cocktailList/index';
 import Ingredients from './components/PageIngredient/index';
-import Popup from'./components/Popup'
 import Recette from './components/Recette/index';
+import Popup from'./components/Popup';
+
 
 class App extends Component {
   
