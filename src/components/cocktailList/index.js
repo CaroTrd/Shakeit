@@ -18,12 +18,9 @@ class CocktailList extends Component {
 
     }
 
-    
-
-
-    loadMore() {
-        this.setState((prev) => {
-            return { visible: prev.visible + 6 };
+    loadMore(){
+        this.setState((prev)=>{
+        return {visible: prev.visible +6};
         });
     }
 
@@ -58,10 +55,10 @@ class CocktailList extends Component {
             <li className="cocktail"
                 key={index}>
                 <div className="container-cocktail">
-                    <NavLink to={`/cocktaillist/recette/${elem.strId}`} >
+                <NavLink to={`/cocktaillist/recette/${elem.idDrink}`} >
                     <img src={elem.strDrinkThumb} alt="" />
                     <p className="cocktailDescription">{elem.strDrink}</p>
-                    </NavLink>
+                </NavLink>
                 </div>
             </li>
         ))
