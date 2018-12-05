@@ -7,7 +7,11 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    z-index:10;
+
 }
+/*Navbar*/
 
 /*Backboutton*/
 .boutonretour {
@@ -34,8 +38,8 @@ img.retour {
 
 button.Spotify {
     position: fixed;
-    right: 20px;
-    top: 10px;
+    right: 25px;
+    top: 20px;
     display: flex;
     align-items: flex-start;
     border-style: solid;
@@ -129,21 +133,22 @@ h2.titre {
 }
 
 p.information {
-    text-align: justify; 
+    text-align: justify;
+    height: 30vh; 
 }
 
-.ingredient{
+.ingredient1{
     font-size: 0.8em;
 }
-.ingredient dl{
+.ingredient1 dl{
     display: flex;
 }
 
-.ingredient dt{
+.ingredient1 dt{
     font-weight: 900;
 }
 
-.ingredient dd{
+.ingredient1 dd{
     margin-left:10px;
 }
 

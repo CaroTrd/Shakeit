@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import BarreDeRecherche from '../BarreDeRecherche/index'
+import { NavLink } from 'react-router-dom';
 
 import './index.css';
 
@@ -16,9 +17,9 @@ class CocktailList extends Component {
 
     }
 
-    loadMore() {
-        this.setState((prev) => {
-            return { visible: prev.visible + 6 };
+    loadMore(){
+        this.setState((prev)=>{
+        return {visible: prev.visible +6};
         });
     }
 
@@ -36,8 +37,10 @@ class CocktailList extends Component {
             <li className="cocktail"
                 key={index}>
                 <div className="container-cocktail">
+                <NavLink to={`/cocktaillist/recette/${elem.idDrink}`} >
                     <img src={elem.strDrinkThumb} alt="" />
                     <p className="cocktailDescription">{elem.strDrink}</p>
+                </NavLink>
                 </div>
             </li>
         ))

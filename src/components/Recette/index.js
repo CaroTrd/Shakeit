@@ -18,6 +18,7 @@ class Recette extends Component {
 
     componentDidMount(props) {
         const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.idDrink || 13060}`;
+
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -37,13 +38,12 @@ class Recette extends Component {
             this.setState({
                 cocktailData: newCocktail
             })
-            console.log(data.drinks[0])
     })
 }
     generateArray(str, data) {
         let array = []
         for (let i = 1; i <= 15; i++) {
-            if (data[str + i] !== "") {
+            if (data[str + i] !== "" && data[str + i] !== null) {
                 array.push(data[str + i])
             }
         }        
@@ -60,7 +60,7 @@ class Recette extends Component {
     /**/
     render() {
         const ingredietsList = this.state.cocktailData.ingredients.map((elem, i) => (
-            <li className="ingredient" key={i}>
+            <li className="ingredient1" key={i}>
                 <dl>
                     <dt>{elem}</dt>
                     <dd>{this.state.cocktailData.measures[i]}</dd>
