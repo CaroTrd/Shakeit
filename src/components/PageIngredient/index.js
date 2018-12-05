@@ -52,7 +52,7 @@ class PageIngredient extends Component {
                         {ingredients} 
                     </ul>
                     
-                    {this.state.visible < this.state.cocktailName.length &&           
+                    {this.state.visible < this.state.ingredientList.length &&           
                     <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
 
                     }

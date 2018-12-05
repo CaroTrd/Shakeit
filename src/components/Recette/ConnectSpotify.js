@@ -15,15 +15,17 @@ class ConnectSpotify extends Component {
         this.fetchSong()
     }
 
-    componentDidUpdate(prevProps){
-        if(prevProps.name !== this.props.name ){
+    componentDidUpdate(prevProps) {
+        if (prevProps.name !== this.props.name) {
             this.fetchSong()
         }
     }
 
-    fetchSong(){
-
-        const source = 'https://api.spotify.com/v1/search?'+'q='+ this.props.name + '&type=playlist&limit=1';
+    fetchSong() {
+        let nom = "this.props.name";
+        let newname = nom.replace("#", "");
+        const source = 'https://api.spotify.com/v1/search?' + 'q=' + newname + '&type=playlist&limit=1';
+        console.log(this.props.name);
         const config = {
             method: 'GET',
             headers: {

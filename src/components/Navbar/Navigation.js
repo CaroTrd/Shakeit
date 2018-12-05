@@ -24,9 +24,9 @@ class Navigation extends Component {
                     <span className="icon-menu"></span>
                     <nav>
                         <ul>
-                            <li><NavLink to="/" className="icon-home">HOME</NavLink></li>
-                            <li><NavLink to="/cocktaillist" className="icon-drink">COCKTAILS</NavLink></li>
-                            <li><NavLink to="/ingredients" activeClassName="selected" className="icon-shop">INGREDIENTS</NavLink></li>
+                            <li><NavLink to="/">HOME</NavLink></li>
+                            <li><NavLink to="/cocktaillist" >COCKTAILS</NavLink></li>
+                            <li><NavLink to="/ingredients" activeClassName="selected">INGREDIENTS</NavLink></li>
                         </ul>
                     </nav>
                 </div>

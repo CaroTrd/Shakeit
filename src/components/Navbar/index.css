@@ -25,19 +25,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
-  .icon-drink:before {
-    content: "\e900";
-  }
-  .icon-home:before {
-    content: "\e901";
-  }
   .icon-menu:before {
     content: "\e903";
   }
-  .icon-shop:before {
-    content: "\e902";
-  }
+  
   
 
 /*Style Navigation*/
@@ -69,7 +60,7 @@
     background-color: black;
     transform: scale(.95);
     transition: all 280ms ease-in-out;
-   pointer-events: none;
+    pointer-events: none;
 }
 
 .menu_bar_open nav {

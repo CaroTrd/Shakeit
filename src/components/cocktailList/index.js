@@ -55,7 +55,7 @@ class CocktailList extends Component {
             <li className="cocktail"
                 key={index}>
                 <div className="container-cocktail">
-                <NavLink to={`/cocktaillist/recette/${elem.idDrink}`} >
+                <NavLink to={`/recette/${elem.idDrink}`} >
                     <img src={elem.strDrinkThumb} alt="" />
                     <p className="cocktailDescription">{elem.strDrink}</p>
                 </NavLink>
@@ -73,8 +73,9 @@ class CocktailList extends Component {
                     }<ul className="cocktail-list">
                         {cocktail}
                     </ul>
-                    {this.state.visible < this.state.cocktailName.length &&
-                        <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+                    {this.state.visible < this.state.cocktailName.length &&           
+                    <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+
                     }
                 </div>
 
