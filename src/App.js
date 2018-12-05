@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+/*import { withCookies, Cookies } from 'react-cookie';*/
+
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navbar/Navigation';
@@ -10,8 +12,6 @@ import Popup from'./components/Popup';
 
 
 class App extends Component {
-  
-  
     render() {
        return (
      
