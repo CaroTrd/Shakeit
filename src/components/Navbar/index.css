@@ -14,7 +14,6 @@
   [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
-    speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
@@ -53,7 +52,7 @@
     position: fixed;
     top: 40px;
     right: 40px;
-    z-index: 2;
+    z-index: 1;
 }
 
 .menu_bar_open span {
