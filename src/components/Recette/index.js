@@ -17,9 +17,9 @@ class Recette extends Component {
     }
 
     componentDidMount(props) {
-        const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.strId || 13060}`;
+        const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${this.props.match.params.idDrink || 13060}`;
         fetch(url)
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
           
              let item = data.drinks[0]
@@ -37,7 +37,7 @@ class Recette extends Component {
             this.setState({
                 cocktailData: newCocktail
             })
-
+            console.log(data.drinks[0])
     })
 }
     generateArray(str, data) {
