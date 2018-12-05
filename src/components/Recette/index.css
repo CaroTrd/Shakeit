@@ -1,0 +1,226 @@
+.DisplayRecette {
+    background-image: url('recettefond.jpg');
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*Backboutton*/
+.boutonretour {
+    position: fixed;
+    top: 2.5%;
+    left: 3%;
+    z-index: 1;
+}
+
+button.fleche {
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: rgba(114, 119, 113, 0.39);
+    padding-top: 4px;
+}
+
+img.retour {
+    width: 5vh;
+}
+
+/*Spotify */
+
+button.Spotify {
+    position: fixed;
+    right: 20px;
+    top: 10px;
+    display: flex;
+    align-items: flex-start;
+    border-style: solid;
+    border-color: white;
+    border-width: 2px;
+    border-radius: 20px;
+    background-color: hsla(66, 49%, 62%, 0.388);
+    color: white;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 1;
+}
+
+div img.spotify-logo{
+    height: 40px;
+    padding-top: 0px;
+    padding-left: 0px;
+}
+
+p.description{
+    padding-top:5px;
+    height: 0px;
+}
+
+/*Page smartphone*/
+
+.container {
+    width: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+
+.imgrecette{
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.flex-container {
+    overflow: scroll;
+    padding: 1em;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
+
+
+h2.titre {
+    font-size: 2.3em;
+    font-variant: all-small-caps;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.description{
+    display: flex; 
+ }
+ 
+
+.tag{
+    border: solid 2px #000;
+    border-radius: 5px;
+    font-weight: bold;
+    padding:.2em .5em;
+    margin-right: .5em;
+}
+
+.alcoholic {
+    color: #8c0f00;
+    border-color: #8c0f00;
+}
+
+.categorie {
+    color: #674109;
+    border-color: #674109;
+}
+
+p.information {
+    text-align: justify; 
+}
+
+.ingredient{
+    font-size: 0.8em;
+}
+.ingredient dl{
+    display: flex;
+}
+
+.ingredient dt{
+    font-weight: 900;
+}
+
+.ingredient dd{
+    margin-left:10px;
+}
+
+.bottom-info h3.sous-titre {
+    padding-top: 30px;
+}
+
+.button-container{
+    display: none;
+}
+
+@media screen and (min-width: 580px){
+
+    .container {
+        flex-direction: row;
+        transition: all 280ms ease-in-out;
+       
+    }
+
+    .container.closed{
+        min-width: auto;
+        min-height: auto;
+        max-width: 80%;
+        max-height: 400px;
+        margin: auto;
+    }
+
+    .closed .imgrecette{
+        padding: 0;
+
+    }
+
+    .imgrecette, .flex-container{
+        width: 50%;
+    }
+
+    .imgrecette{
+        padding-bottom: 50%;
+    }
+
+    .flex-container{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .flex-container .content{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    
+    }
+
+    .closed .flex-container .content{
+        display: block;
+    }
+
+
+.button-container{
+    display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        padding: .5em;
+        box-sizing: border-box;
+        text-align: center;
+    }
+.button-container:before{
+        content:'';
+        position: absolute;
+        top: -35px;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        overflow: visible;
+        background: linear-gradient(to top, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); 
+    }
+}

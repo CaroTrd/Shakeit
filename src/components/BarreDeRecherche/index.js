@@ -5,52 +5,57 @@ class BarreDeRcherche extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      ingredient: "",
-      ingredientList:[],
-      coktailList: [],
+     dataList: [],
+     item:"",
      
-    };
+    }
+    this.getDataList = this.getDataList.bind(this);
   }
+  
 
-  getCoktailList(ev) {
-    this.setState({
-      ingredient: ev.target.value,
-      
-     
-    });
+ 
     
-  }
     componentDidMount(){
-    fetch(
-      "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"
-    ).then(response => response.json())
+      const url='https://www.thecocktaildb.com/api/json/v1/1/';
+      let param = this.props.type === "ingredient" ? "list.php?i=list" : "filter.php?c=Cocktail" ;
+      fetch (url + param)
+      .then(response => response.json())
       .then(data => {
         this.setState({
-          ingredientList : data.drinks
-        })
-      
-    } )
+         dataList : data.drinks
+        })      
+      })
   }
+    componentDidUpdate(prevProps, prevState){
+     let filteredList = []
+     let propsName = this.props.type === "ingredient" ? 'strIngredient1' :  'strDrink' ;
+     if(prevState.item !== this.state.item){
+        filteredList = this.state.dataList.filter(elem =>{
+          return elem[propsName].toLowerCase().includes(this.state.item.toLowerCase())
+        })
+
+        this.props.callback(filteredList);
+      }
+    }
+      
+   getDataList(ev){
+     this.setState({
+        item : ev.target.value
+     })
+   } 
 
  
 
   render() {
-    /*let displayIngredient = this.state.ingredientList.filter(elem=> 
-    elem.strIngredient1.toLowerCase().includes(this.state.ingredient.toLowerCase()))
-    .map((elem, i)=> {
-        return (
-            <li key={i}>{elem.strIngredient1}</li>
-        )
-    })*/
-    
+
     return (
-      <div>
-        <div className="search-container" >
+      
+    <div className="search-container" >
         <input
           type="text"
           className="search-bar"
-          value={this.state.ingredient}
-          onChange={ev => this.getCoktailList(ev)}
+          value={this.state.item}
+          onChange={ev => this.getDataList(ev)}
           placeholder="What can I serve you ?"
         />
         <img
@@ -58,9 +63,9 @@ class BarreDeRcherche extends Component {
           src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"
           alt=""
         />
-        </div>
+  </div>
 
-      </div>
+    
     );
   }
 }
