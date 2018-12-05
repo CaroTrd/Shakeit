@@ -5,7 +5,6 @@ import { withRouter } from "react-router";
 
 import './index.css';
 
->>>>>>> fd1be4fef00cb9422e60997315045825a48c8915
 class Recette extends Component {
     constructor(props) {
         super(props);
@@ -22,33 +21,32 @@ class Recette extends Component {
         fetch(url)
             .then(response => response.json())
             .then(data => {
-
-                let item = data.drinks[0]
-
-                const newCocktail = {};
-                newCocktail.name = item.strDrink;
-                newCocktail.isAlcoholic = item.strAlcoholic;
-                newCocktail.glass = item.strGlass;
-                newCocktail.instruction = item.strInstructions;
-                newCocktail.image = item.strDrinkThumb;
-                newCocktail.category = item.strCategory;
-                newCocktail.ingredients = this.generateArray('strIngredient', item);
-                newCocktail.measures = this.generateArray('strMeasure', item);
-
-                this.setState({
-                    cocktailData: newCocktail
-                })
-
+          
+             let item = data.drinks[0]
+          
+            const newCocktail = {};
+            newCocktail.name = item.strDrink;
+            newCocktail.isAlcoholic = item.strAlcoholic;
+            newCocktail.glass = item.strGlass;
+            newCocktail.instruction = item.strInstructions;
+            newCocktail.image = item.strDrinkThumb;
+            newCocktail.category = item.strCategory;
+            newCocktail.ingredients = this.generateArray('strIngredient', item);
+            newCocktail.measures = this.generateArray('strMeasure', item);
+    
+            this.setState({
+                cocktailData: newCocktail
             })
-    }
+
+    })
+}
     generateArray(str, data) {
         let array = []
         for (let i = 1; i <= 15; i++) {
             if (data[str + i] !== "") {
                 array.push(data[str + i])
             }
-        }
->>>>>>> fd1be4fef00cb9422e60997315045825a48c8915
+        }        
         return array;
     }
 
