@@ -74,7 +74,7 @@ class CocktailList extends Component {
                         {cocktail}
                     </ul>
                     {this.state.visible < this.state.cocktailName.length &&           
-                    <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+                    <button onClick={() => this.loadMore()} type="button" className="cta load">Load more</button>
 
                     }
                 </div>

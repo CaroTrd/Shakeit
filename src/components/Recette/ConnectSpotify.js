@@ -5,7 +5,6 @@ class ConnectSpotify extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            images: "",
             url: "",
 
         }
@@ -20,14 +19,13 @@ class ConnectSpotify extends Component {
     fetchSong() {
         let nom = this.props.name;
         let newname = nom.replace("#", "");
-        console.log(newname, this.props.name);
         const source = 'https://api.spotify.com/v1/search?' + 'q=' + newname + '&type=playlist&limit=1';
         const config = {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + 'BQAw6x5O-s0II3E0N3y_CiHZpKfsW__9G2aCvsoZq-dYYk-NYjpUjNbFbnnrNKItCiy6szS1VrSRyF3rvlcCJV1wasun9o62ZGpAzvAIphWxsE-DdF7ksFU7KNUXHkB4kaKL7uGiMZi0qVQJAkNROTsLzr4kqi0NG69AssmrthHu539wnSDQy2G2Qdl4gspfq7fjrABE3xqd4NmVT9Wm94Vtets'
+                "Authorization": 'Bearer ' + 'BQBjdTOCgfYVBXB8NsN5q_4ME-nROKxr8YzyyXWxW8YK44gLGLyB8b6hv57KC7RtkIff-PBQOwavYnQH7ux_8VPAiFb92wdnZ0SYYyP7SjMeyjfdLF2NGoses1NDYSnBOkuee5Mu-z6iRJu0A9sappZkEwgNJEo8p4tRc3wABntnebUdUKnJ__l9h8NBUt32dQQM1v14Gg9yzJL5xKXuM9ac-Jg'
             }
         }
         fetch(source, config)

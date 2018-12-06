@@ -45,6 +45,12 @@
   padding: 12px 16px;
   outline: none;
 }
+.load {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50);
+}
 
 a {
   text-decoration: none;
