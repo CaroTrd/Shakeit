@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './App.css';
+import logo from './logo.svg';
 
 import { Switch, Route } from 'react-router-dom';
 import Navigation from './components/Navbar/Navigation';
@@ -16,6 +17,8 @@ class App extends Component {
         return (
 
             <div className="App">
+
+            <img src={logo} className="logos" alt="logo"/>  
                 <Popup />
                 <Navigation />
                 <Switch>

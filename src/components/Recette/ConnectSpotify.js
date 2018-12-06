@@ -11,10 +11,6 @@ class ConnectSpotify extends Component {
         }
     }
 
-    componentDidMount() {
-        this.fetchSong()
-    }
-
     componentDidUpdate(prevProps) {
         if (prevProps.name !== this.props.name) {
             this.fetchSong()
@@ -22,16 +18,16 @@ class ConnectSpotify extends Component {
     }
 
     fetchSong() {
-        let nom = "this.props.name";
+        let nom = this.props.name;
         let newname = nom.replace("#", "");
+        console.log(newname, this.props.name);
         const source = 'https://api.spotify.com/v1/search?' + 'q=' + newname + '&type=playlist&limit=1';
-        console.log(this.props.name);
         const config = {
             method: 'GET',
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "Authorization": 'Bearer ' + 'BQCbjopFI45_xMBq7puPZZ-yQN0WlgkUBTmNV9m-Jo3mRisheKBl9GUfIhzLdRbZBGtJG8H_fzTe8thiaWDR_llu7hK_h8vxjQxq4ec5k-CiLmZCVQPueSt69ulU5hDc1hr1lXI_lCsrHlsnVfHP5ql4QP1mzh4DqugsfxjPzd3XT7wEzhuMR0COgo31zR-90q6Jw4geMRvNJ970KHsNNkQyKn8'
+                "Authorization": 'Bearer ' + 'BQAw6x5O-s0II3E0N3y_CiHZpKfsW__9G2aCvsoZq-dYYk-NYjpUjNbFbnnrNKItCiy6szS1VrSRyF3rvlcCJV1wasun9o62ZGpAzvAIphWxsE-DdF7ksFU7KNUXHkB4kaKL7uGiMZi0qVQJAkNROTsLzr4kqi0NG69AssmrthHu539wnSDQy2G2Qdl4gspfq7fjrABE3xqd4NmVT9Wm94Vtets'
             }
         }
         fetch(source, config)
