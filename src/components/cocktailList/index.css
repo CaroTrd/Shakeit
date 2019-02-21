@@ -41,8 +41,10 @@
 }
 
 .load{
-    align-items: center;
+    margin-left: 50%;
 }
+
+
 
 /****version Tablette****/
 @media screen and (min-width: 600px){
