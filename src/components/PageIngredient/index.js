@@ -53,7 +53,7 @@ class PageIngredient extends Component {
                     </ul>
                     
                     {this.state.visible < this.state.ingredientList.length &&           
-                    <button onClick={() => this.loadMore()} type="button" className="cta">Load more</button>
+                    <button onClick={() => this.loadMore()} type="button" className="cta load">Load more</button>
 
                     }
                 </div>

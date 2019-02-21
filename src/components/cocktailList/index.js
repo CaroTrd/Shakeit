@@ -76,8 +76,14 @@ class CocktailList extends Component {
                     
                     
                     {this.state.visible < this.state.cocktailName.length &&           
+<<<<<<< HEAD
                     <button onClick={() => this.loadMore()} type="button" className="cta load">Load more</button>}
                    
+=======
+                    <button onClick={() => this.loadMore()} type="button" className="cta load">Load more</button>
+
+                    }
+>>>>>>> f6f6c0ed690ea0398e94d135751e4aa8713e0aca
                 </div>
 
 
